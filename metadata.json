@@ -1,0 +1,5 @@
+{
+  "name": "AJAZI - PlanSmith AI",
+  "description": "An intelligent lesson plan generator for teachers. Upload your district's specific template (Word/PDF), provide resources or links, and let AI craft a perfectly formatted lesson plan tailored to your needs.",
+  "requestFramePermissions": []
+}
