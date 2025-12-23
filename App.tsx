@@ -68,9 +68,6 @@ const App: React.FC = () => {
     setFile(selectedFile);
   };
 
-  // Helper to generate a label for archiving resources based on current form context
-  // We can construct this from lessonMeta if available, or pass it dynamically if we lifted all state.
-  // For now, simple context or manual naming is fine.
   const resourceContextLabel = lessonMeta.subject && lessonMeta.topic ? `${lessonMeta.subject} - ${lessonMeta.topic}` : '';
 
   return (
@@ -78,16 +75,16 @@ const App: React.FC = () => {
       <div className="max-w-6xl mx-auto font-serif">
         
         {/* Hero Text */}
-        <div className="text-center mb-12 pt-6">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#efebe9] tracking-tight mb-5 drop-shadow-md font-serif">
+        <div className="text-center mb-10 pt-2">
+          <h1 className="text-4xl md:text-6xl font-bold text-[#f1f5f9] tracking-tight mb-3 drop-shadow-md font-serif">
             Craft the Perfect Lesson Plan
           </h1>
-          <div className="flex justify-center mb-6">
-            <div className="h-1 w-32 bg-[#8d6e63] rounded-full opacity-60"></div>
+          <div className="flex justify-center mb-4">
+            <div className="h-1 w-32 bg-[#38bdf8] rounded-full opacity-60"></div>
           </div>
-          <p className="text-xl text-[#d7ccc8] max-w-2xl mx-auto font-serif italic leading-relaxed">
+          <p className="text-2xl text-[#e0f2fe] max-w-3xl mx-auto font-serif italic leading-relaxed drop-shadow-sm font-medium">
             "Education is the kindling of a flame."<br/>
-            <span className="text-base not-italic opacity-90 mt-2 block text-[#efebe9]">Upload your template, provide resources, and let us scribe the details.</span>
+            <span className="text-base not-italic opacity-90 mt-8 block text-[#f8fafc] font-normal">Upload your template, provide resources, and let us scribe the details.</span>
           </p>
         </div>
 
@@ -110,22 +107,22 @@ const App: React.FC = () => {
             
             {/* Step 1: District Info (Template + Resources) */}
             <div className="lg:col-span-5 flex flex-col">
-              <div className="bg-[#fffbf5] rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm shadow-xl border-2 border-[#e0d8c8] overflow-hidden h-full flex flex-col relative">
+              <div className="bg-white rounded-tr-3xl rounded-bl-3xl rounded-tl-sm rounded-br-sm shadow-xl border-2 border-[#cbd5e1] overflow-hidden h-full flex flex-col relative">
                 {/* Corner decoration */}
-                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#8d6e63]"></div>
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#8d6e63]"></div>
+                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[#334155]"></div>
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[#334155]"></div>
 
-                <div className="p-6 border-b border-[#e0d8c8] bg-[#f9f5eb] flex items-center justify-between">
+                <div className="p-6 border-b border-[#e2e8f0] bg-[#f8fafc] flex items-center justify-between">
                    <div className="flex items-center space-x-4">
-                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#3e2723] text-[#ffecb3] font-bold text-xl shadow-md border border-[#5d4037] font-serif">I</div>
-                     <h2 className="text-xl font-bold text-[#3e2723] font-serif">District Info</h2>
+                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1e293b] text-[#e0f2fe] font-bold text-xl shadow-md border border-[#475569] font-serif">I</div>
+                     <h2 className="text-xl font-bold text-[#0f172a] font-serif">District Info</h2>
                    </div>
-                   <Scroll className="w-6 h-6 text-[#8d6e63]" />
+                   <Scroll className="w-6 h-6 text-[#475569]" />
                 </div>
                 
                 <div className="p-8 flex-grow flex flex-col gap-8">
                   <div>
-                    <p className="text-[#5d4037] text-sm mb-4 leading-relaxed italic border-l-2 border-[#d7ccc8] pl-4">
+                    <p className="text-[#334155] text-sm mb-4 leading-relaxed italic border-l-2 border-[#94a3b8] pl-4">
                       Select the parchment (DOCX or PDF) required by your district.
                     </p>
                     <FileUploader 
@@ -136,7 +133,7 @@ const App: React.FC = () => {
                   </div>
 
                   {/* Divider */}
-                  <div className="h-px bg-gradient-to-r from-transparent via-[#d7ccc8] to-transparent w-full"></div>
+                  <div className="h-px bg-gradient-to-r from-transparent via-[#cbd5e1] to-transparent w-full"></div>
 
                   <div>
                      <ResourcesInput 
@@ -151,24 +148,24 @@ const App: React.FC = () => {
 
             {/* Arrow for Desktop */}
             <div className="hidden lg:flex items-center justify-center lg:col-span-1">
-                <div className="p-2 bg-[#3e2723]/40 rounded-full backdrop-blur-sm border border-[#d7ccc8]/30">
-                    <ArrowRight className="w-6 h-6 text-[#efebe9]" />
+                <div className="p-2 bg-[#1e293b]/40 rounded-full backdrop-blur-sm border border-[#94a3b8]/30">
+                    <ArrowRight className="w-6 h-6 text-[#e0f2fe]" />
                 </div>
             </div>
 
             {/* Step 2: Details */}
             <div className="lg:col-span-6 flex flex-col">
-               <div className="bg-[#fffbf5] rounded-tl-3xl rounded-br-3xl rounded-tr-sm rounded-bl-sm shadow-xl border-2 border-[#e0d8c8] overflow-hidden h-full flex flex-col relative">
+               <div className="bg-white rounded-tl-3xl rounded-br-3xl rounded-tr-sm rounded-bl-sm shadow-xl border-2 border-[#cbd5e1] overflow-hidden h-full flex flex-col relative">
                  {/* Corner decoration */}
-                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#8d6e63]"></div>
-                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#8d6e63]"></div>
+                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#334155]"></div>
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[#334155]"></div>
 
-                <div className="p-6 border-b border-[#e0d8c8] bg-[#f9f5eb] flex items-center justify-between">
+                <div className="p-6 border-b border-[#e2e8f0] bg-[#f8fafc] flex items-center justify-between">
                    <div className="flex items-center space-x-4">
-                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#3e2723] text-[#ffecb3] font-bold text-xl shadow-md border border-[#5d4037] font-serif">II</div>
-                     <h2 className="text-xl font-bold text-[#3e2723] font-serif">Lesson Details</h2>
+                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1e293b] text-[#e0f2fe] font-bold text-xl shadow-md border border-[#475569] font-serif">II</div>
+                     <h2 className="text-xl font-bold text-[#0f172a] font-serif">Lesson Details</h2>
                    </div>
-                   <Settings className="w-6 h-6 text-[#8d6e63]" />
+                   <Settings className="w-6 h-6 text-[#475569]" />
                 </div>
 
                 <div className="p-8 flex-grow">
@@ -185,17 +182,17 @@ const App: React.FC = () => {
         ) : (
           /* Result View */
           <div className="animate-fade-in space-y-6">
-             <div className="flex justify-between items-end text-[#efebe9] border-b border-[#8d6e63]/50 pb-4">
+             <div className="flex justify-between items-end text-[#f1f5f9] border-b border-[#334155]/50 pb-4">
                 <div>
-                    <h2 className="text-3xl font-bold flex items-center font-serif text-[#fff8e1]">
-                    <Feather className="w-7 h-7 text-[#d4af37] mr-3" />
+                    <h2 className="text-3xl font-bold flex items-center font-serif text-[#f1f5f9]">
+                    <Feather className="w-7 h-7 text-[#0ea5e9] mr-3" />
                     The Plan is Prepared
                     </h2>
-                    <p className="text-[#d7ccc8] text-sm italic mt-1 ml-10">Ready for your review and export.</p>
+                    <p className="text-[#e2e8f0] text-sm italic mt-1 ml-10">Ready for your review and export.</p>
                 </div>
                 <button 
                   onClick={reset}
-                  className="px-5 py-2 bg-[#5d4037] hover:bg-[#4e342e] rounded border border-[#8d6e63] text-[#efebe9] font-serif text-sm transition-all hover:shadow-lg shadow-md"
+                  className="px-5 py-2 bg-[#1e293b] hover:bg-[#0f172a] rounded border border-[#475569] text-[#f1f5f9] font-serif text-sm transition-all hover:shadow-lg shadow-md"
                 >
                   Create Another
                 </button>

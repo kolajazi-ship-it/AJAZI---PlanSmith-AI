@@ -10,8 +10,8 @@
     <style>
       body {
         font-family: 'Merriweather', serif;
-        background-color: #f9f7f1; /* Warm Parchment */
-        color: #3e2723; /* Deep Brown */
+        background-color: #f0f4f8; /* Cool Slate/Blue Mist */
+        color: #0f172a; /* Slate 900 */
       }
       /* Custom scrollbar for markdown content */
       .lesson-plan-output::-webkit-scrollbar {
@@ -19,15 +19,15 @@
         height: 10px;
       }
       .lesson-plan-output::-webkit-scrollbar-track {
-        background: #f2efe9; 
+        background: #f1f5f9; 
       }
       .lesson-plan-output::-webkit-scrollbar-thumb {
-        background: #a1887f; 
+        background: #64748b; /* Slate 500 */
         border-radius: 5px;
-        border: 2px solid #f2efe9;
+        border: 2px solid #f1f5f9;
       }
       .lesson-plan-output::-webkit-scrollbar-thumb:hover {
-        background: #8d6e63; 
+        background: #475569; /* Slate 600 */
       }
 
       /* Specific styles for the AI generated HTML lesson plans */
@@ -35,23 +35,23 @@
         width: 100%;
         border-collapse: collapse;
         margin-bottom: 1.5rem;
-        border: 2px solid #5d4037; /* Dark Brown Border */
+        border: 2px solid #1e293b; /* Slate 800 Border */
         font-size: 0.95rem;
-        background-color: #fffbf5;
+        background-color: #ffffff;
       }
       .lesson-plan-output th, 
       .lesson-plan-output td {
-        border: 1px solid #8d6e63;
+        border: 1px solid #94a3b8; /* Slate 400 */
         padding: 0.85rem;
         text-align: left;
         vertical-align: top;
       }
       .lesson-plan-output th {
-        background-color: #efebe9;
+        background-color: #f1f5f9; /* Slate 100 */
         font-family: 'Playfair Display', serif;
         font-weight: 700;
-        color: #3e2723;
-        border-bottom: 2px double #5d4037;
+        color: #0f172a;
+        border-bottom: 2px double #1e293b;
         letter-spacing: 0.02em;
       }
       .lesson-plan-output h1, 
@@ -60,20 +60,20 @@
         font-family: 'Playfair Display', serif;
         margin-top: 2rem;
         margin-bottom: 1rem;
-        color: #271c19;
+        color: #0f172a;
         font-weight: 700;
         line-height: 1.2;
       }
       .lesson-plan-output h1 { 
         font-size: 2.25rem; 
-        border-bottom: 3px double #8d6e63; 
+        border-bottom: 3px double #334155; 
         padding-bottom: 0.75rem; 
         text-align: center;
       }
-      .lesson-plan-output h2 { font-size: 1.75rem; color: #4e342e; border-bottom: 1px solid #d7ccc8; padding-bottom: 0.25rem; }
-      .lesson-plan-output h3 { font-size: 1.35rem; color: #5d4037; font-style: italic; }
-      .lesson-plan-output p { margin-bottom: 1rem; line-height: 1.8; color: #3e2723; }
-      .lesson-plan-output ul, .lesson-plan-output ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #3e2723; }
+      .lesson-plan-output h2 { font-size: 1.75rem; color: #1e293b; border-bottom: 1px solid #cbd5e1; padding-bottom: 0.25rem; }
+      .lesson-plan-output h3 { font-size: 1.35rem; color: #334155; font-style: italic; }
+      .lesson-plan-output p { margin-bottom: 1rem; line-height: 1.8; color: #1e293b; }
+      .lesson-plan-output ul, .lesson-plan-output ol { margin-left: 1.5rem; margin-bottom: 1rem; color: #1e293b; }
       .lesson-plan-output li { margin-bottom: 0.5rem; }
       
       /* Print styles */
@@ -97,7 +97,7 @@
 }
 </script>
 </head>
-  <body class="antialiased text-stone-900">
+  <body class="antialiased text-slate-900">
     <div id="root"></div>
   </body>
 </html>

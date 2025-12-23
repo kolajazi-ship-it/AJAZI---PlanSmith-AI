@@ -34,8 +34,6 @@ export const LessonResult: React.FC<LessonResultProps> = ({ content, topic, subj
     const footer = "</body></html>";
     const sourceHTML = header + content + footer;
     
-    // Construct filename: Subject + Unit + Topic
-    // e.g., "Algebra 2 Unit 3 Lesson 1 Properties of Exponents.doc"
     const safeSubject = (subject || '').trim();
     const safeUnit = (unit || '').trim();
     const safeTopic = (topic || 'Lesson_Plan').trim();
@@ -43,7 +41,6 @@ export const LessonResult: React.FC<LessonResultProps> = ({ content, topic, subj
     let baseFilename = `${safeSubject} ${safeUnit} ${safeTopic}`.trim();
     if (!baseFilename) baseFilename = "PlanSmith_Lesson_Plan";
 
-    // Sanitize filename to remove characters invalid in filesystems
     const sanitizedFilename = baseFilename.replace(/[^a-z0-9 \-_]/gi, '').replace(/\s+/g, ' ');
 
     const blob = new Blob([sourceHTML], { type: 'application/msword' });
@@ -58,18 +55,18 @@ export const LessonResult: React.FC<LessonResultProps> = ({ content, topic, subj
   };
 
   return (
-    <div className="bg-[#fdfbf7] rounded shadow-2xl border border-[#d7ccc8] overflow-hidden mb-12">
+    <div className="bg-white rounded shadow-2xl border border-[#cbd5e1] overflow-hidden mb-12">
       {/* Action Toolbar - Classic Header */}
-      <div className="bg-[#efebe9] border-b border-[#d7ccc8] px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div className="bg-[#f1f5f9] border-b border-[#cbd5e1] px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="flex items-center">
-            <div className="h-8 w-1 bg-[#5d4037] mr-3"></div>
-            <h3 className="text-[#3e2723] font-bold text-lg font-serif">The Generated Manuscript</h3>
+            <div className="h-8 w-1 bg-[#1e293b] mr-3"></div>
+            <h3 className="text-[#0f172a] font-bold text-lg font-serif">The Generated Manuscript</h3>
         </div>
         
         <div className="flex flex-wrap gap-2 font-serif justify-center sm:justify-end">
           <button
             onClick={handleDownloadDoc}
-            className="flex items-center px-4 py-2 bg-[#5d4037] text-[#fff8e1] rounded text-sm font-semibold hover:bg-[#4e342e] hover:shadow-md transition-all active:scale-95 border border-[#3e2723]"
+            className="flex items-center px-4 py-2 bg-[#1e293b] text-[#f1f5f9] rounded text-sm font-semibold hover:bg-[#0f172a] hover:shadow-md transition-all active:scale-95 border border-[#0f172a]"
           >
             <Download className="w-4 h-4 mr-2" />
             Save as DOCX
@@ -79,8 +76,8 @@ export const LessonResult: React.FC<LessonResultProps> = ({ content, topic, subj
             onClick={handleCopy}
             className={`flex items-center px-4 py-2 border rounded text-sm font-semibold transition-all duration-200 active:scale-95 ${
               copied 
-                ? 'bg-[#dcedc8] border-[#aed581] text-[#33691e]' 
-                : 'bg-[#fff] border-[#d7ccc8] text-[#5d4037] hover:bg-[#fff8e1] hover:text-[#3e2723] hover:border-[#8d6e63]'
+                ? 'bg-[#dcfce7] border-[#86efac] text-[#166534]' 
+                : 'bg-white border-[#cbd5e1] text-[#334155] hover:bg-[#f1f5f9] hover:text-[#0f172a] hover:border-[#64748b]'
             }`}
           >
             {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
@@ -90,8 +87,8 @@ export const LessonResult: React.FC<LessonResultProps> = ({ content, topic, subj
       </div>
 
       {/* Document View - Simulated Paper */}
-      <div className="bg-[#d7ccc8] p-4 md:p-8 lg:p-10 overflow-x-auto bg-opacity-30">
-        <div className="bg-[#fffbf5] shadow-lg border border-[#e0e0e0] mx-auto max-w-[210mm] min-h-[297mm] p-[15mm] md:p-[20mm]">
+      <div className="bg-[#e2e8f0] p-4 md:p-8 lg:p-10 overflow-x-auto bg-opacity-50">
+        <div className="bg-white shadow-lg border border-[#cbd5e1] mx-auto max-w-[210mm] min-h-[297mm] p-[15mm] md:p-[20mm]">
             <div 
                 className="lesson-plan-output"
                 dangerouslySetInnerHTML={{ __html: content }}
