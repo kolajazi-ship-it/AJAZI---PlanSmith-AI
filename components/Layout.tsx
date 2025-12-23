@@ -45,20 +45,20 @@ export const Layout: React.FC<LayoutProps> = ({ children, onTemplateSelect }) =>
             <span className="text-2xl font-bold text-[#e0f2fe] tracking-wide block leading-none font-serif text-shadow-sm">AJAZI - PlanSmith AI</span>
             <div className="flex items-center gap-2 mt-1">
                <span className="h-px w-8 bg-[#0ea5e9]"></span>
-               <span className="text-[11px] text-[#0f172a] uppercase tracking-widest font-bold bg-[#0ea5e9]/20 px-1 rounded">Teacher's Edition</span>
+               <span className="text-[11px] text-[#8dd1e3] uppercase tracking-widest font-bold bg-[#0ea5e9]/20 px-1 rounded">Teacher's Edition</span>
             </div>
           </div>
         </div>
         <nav className="flex space-x-6">
           <button 
             onClick={() => setShowHelp(true)}
-            className="text-[#0f172a] hover:text-[#e0f2fe] text-sm font-medium transition-colors font-serif italic focus:outline-none"
+            className="text-[#8dd1e3] hover:text-[#e0f2fe] text-sm font-medium transition-colors font-serif italic focus:outline-none"
           >
             Help Guide
           </button>
           <button 
             onClick={() => setShowLibrary(true)}
-            className="text-[#0f172a] hover:text-[#e0f2fe] text-sm font-medium transition-colors font-serif italic flex items-center focus:outline-none"
+            className="text-[#8dd1e3] hover:text-[#e0f2fe] text-sm font-medium transition-colors font-serif italic flex items-center focus:outline-none"
           >
             <Feather className="w-3 h-3 mr-1" />
             My Library
