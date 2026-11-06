@@ -64,7 +64,6 @@ export default async function handler(req: any, res: any) {
       model: "gemini-3.8-flash",
       contents: { parts: [filePart, { text: prompt }] },
       config: {
-        tools: [{ googleSearch: {} }],
         thinkingConfig: { thinkingBudget: 0 },
       },
     });
