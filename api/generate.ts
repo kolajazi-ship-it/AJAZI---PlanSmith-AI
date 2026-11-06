@@ -1,5 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 
+declare const process: { env: { GEMINI_API_KEY?: string } };
+
 // Vercel runs this endpoint on the server. Keep GEMINI_API_KEY out of the
 // browser bundle and never return it to the client.
 export default async function handler(req: any, res: any) {
